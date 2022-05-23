@@ -1,6 +1,8 @@
 import {
   IonApp,
   IonBadge,
+  IonCard,
+  IonCardContent,
   IonRouterOutlet,
   setupIonicReact,
 } from '@ionic/react';
@@ -24,7 +26,20 @@ describe('A random component', () => {
         <IonReactRouter history={createMemoryHistory()}>
           <IonRouterOutlet>
             <Route path="/">
-              <IonBadge color="primary">Hello world!</IonBadge>
+              <IonCard>
+                <IonCardContent>
+                  <IonBadge color="primary">Hello world!</IonBadge>
+                  <IonBadge color="primary">Hello world!</IonBadge>
+                  <IonBadge color="primary">Hello world!</IonBadge>
+                  <IonBadge color="primary">Hello world!</IonBadge>
+                  <IonBadge color="primary">Hello world!</IonBadge>
+                  <IonBadge color="primary">Hello world!</IonBadge>
+                  <IonBadge color="primary">Hello world!</IonBadge>
+                  <IonBadge color="primary">Hello world!</IonBadge>
+                  <IonBadge color="primary">Hello world!</IonBadge>
+                  <IonBadge color="primary">Hello world!</IonBadge>
+                </IonCardContent>
+              </IonCard>
             </Route>
           </IonRouterOutlet>
         </IonReactRouter>
@@ -43,8 +58,11 @@ describe('A random component', () => {
 
     console.log(3);
 
-    // This assertion is just so the test fails
-    await screen.findAllByText('This string should not be findable.');
+    // This is the quickest way to trigger the error.
+    screen.debug();
+
+    // Enable this assertion to see the same error.
+    //await screen.findAllByText('This string should not be findable.');
 
     /*
       When the `screen.findAllByText` fails, @testing-library/react
@@ -56,7 +74,8 @@ describe('A random component', () => {
       
       If you manually change the `printObjectProperties` function at
       `node_modules/pretty-format/build/collections.js` and add some
-      logs, you can see how many times it is called.  
+      logs, you can see how many times it is called.
+
     */
   });
 });
